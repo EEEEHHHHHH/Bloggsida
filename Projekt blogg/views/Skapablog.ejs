@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Skapa Blogg</title>
+
+</head>
+<body id="skapa-blogg">
+    <div class="orange-background">
+    <h1 id="skapa-blogg-titel">Skapa din blogg</h1>
+   </div>
+<form id="skapa-blogg-form" action="/bloggar/skapa-blogg" method="POST">
+    <div class="skapa-blogg-info">
+        <input type="text" name="title" id="titleInput" placeholder="Titel:" />
+        <input type="text" name="category" id="categoryInput" placeholder="Kategori:">
+        <input type="hidden" name="date" value="<%= new Date().toISOString() %>">
+        <input type="text" name="author" id="authorInput" placeholder="Förnamn Efternamn:">
+        <textarea name="text" id="textInput" placeholder=""></textarea>
+    </div>
+</form>
+<div class="create-blog-buttons">
+    <button onclick="location.href = '/bloggar'" >Tillbaka</button>
+    <input onclick="document.getElementById('skapa-blogg-form').submit()" type="submit" value="Publicera" />
+</div>
+
+<%- include("partials/footer.ejs") %>
+
+</body>
+</html>

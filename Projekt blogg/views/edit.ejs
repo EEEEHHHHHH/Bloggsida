@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Redigera Blogg</title>
+</head>
+<body id="skapa-blogg">
+    <div class="orange-background">
+        <h1 id="skapa-blogg-titel">Redigera din blogg</h1>
+    </div>
+    <form id="skapa-blogg-form" action="/bloggar/blogg/<%= postToEdit.id %>/redigera" method="POST">
+        <div class="skapa-blogg-info">
+            <input type="text" name="title" placeholder="Titel:" value="<%= postToEdit.title %>"/>
+            <input type="text" name="category" placeholder="Kategori:" value="<%= postToEdit.category %>">
+            <input type="text" name="author" placeholder="Förnamn Efternamn:" value="<%= postToEdit.author %>">
+            <textarea name="text"><%= postToEdit.text %></textarea>
+        </div>
+        <div class="create-blog-buttons">
+            <button href="/bloggar">Tillbaka</button>
+            <input type="submit" value="Spara"/>
+        </div>
+    </form>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

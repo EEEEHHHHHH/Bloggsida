@@ -1,0 +1,404 @@
+body, html {
+    display: flex;
+    flex-direction: row;
+    background-color: #D9E8FF;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.main {
+    height: 100%;
+
+ }
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    background-color: #81B0F6;
+    height: 100vh;
+    justify-content: space-between;
+
+}
+
+#side-bar-functions {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    left: 0px;
+    bottom: 10px;
+}
+
+
+#side-bar-functions button, #side-bar-functions a {
+    display: flex;
+    background: none;
+    border: none;
+    font-size: 38px;
+    text-decoration: none;
+
+}
+
+#side-bar-functions a {
+    color: #000000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 5px;
+    width: 100%;
+    height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        width: 90vw;
+    }
+}
+
+#blog-icon button {
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 38px;
+    width: 100%;
+    height: 50px;
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+#blog-icon {
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.blogg-title {
+    display: flex;
+    align-items: center;
+    background-color: #81B0F6;
+    width: 100%;
+    height: 50px;
+}
+
+.blogg-title h1 {
+    color: #FFFFFF;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 21px;
+}
+
+.search-input {
+    height: 100%;
+    width: 100%;
+}
+
+.search-input input {
+    width: 100%;
+    height: 34px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.search-icon button {
+    border: none;
+    background-color: #FFFFFF;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 34px; 
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.search-input input:focus {
+    outline: none;
+}
+
+.blog-sites ul {
+    list-style-type: none;
+    margin-left: 30px;
+    padding: 0px;
+    margin-right: 30px;
+}
+
+.blog-sites ul li {
+    background-color:#DFB08E;
+    margin-top: 12px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.blog-sites {
+    height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.blog-sites p, .blog-sites h1, .blog-sites h2, .blog-sites h3, .blog-sites h4 {
+    overflow: hidden;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #81B0F6;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.4;
+}
+
+#catagories-title {
+    display: none;
+    color: #FFFFFF;
+    margin-left: 20px;
+
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    gap: 60px;
+}
+
+#skapa-blogg {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.category-list button {
+    border-bottom: 1px solid #6EA3F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 47px;
+    font-size: 18px;
+    background: none;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+#skapa-blogg-titel {
+    display: flex;
+    justify-content: center;
+    background-color: #DFB08E;
+    border-radius: 10px;
+    width: 300px;
+    font-weight: lighter;
+}
+
+.orange-background {
+    display: flex;
+    justify-content: center;
+}
+
+#skapa-blogg-form {
+    display: flex; 
+    flex-direction: column;
+    height: 90vh;    
+}
+
+.create-blog-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.create-blog-buttons button, .create-blog-buttons input {
+    width: 176px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    background-color: #DFB08E;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.create-blog-buttons input:hover {
+    opacity: 0.4;
+}
+
+.skapa-blogg-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.skapa-blogg-info input {
+    width: 90vw;
+}
+
+.skapa-blogg-info textarea {
+    width: 90vw;
+    height: 100%;
+}
+
+#skapa-blogg-form input {
+    height: 38px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+}
+
+#skapa-blogg-form textarea {
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+#login-page {
+    display: flex;
+    flex-direction: column;;
+}
+
+#login-form { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#login-form input {
+    width: 100%;
+    margin-bottom: 56px;
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+}
+
+.login-button {
+    width: 40vw;
+}
+
+.login-button input {
+    background-color: #FFFFFF;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.anvandarnamn-losen {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.anvandarnamn-losen input {
+    height: 61px;
+}
+
+#bloggen {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main-bloggen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blogg-knapp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 24px;
+    margin-bottom: 3px;
+}
+
+.blogg-knapp button {
+    background-color: #DFB08E;
+    border-radius: 10px;
+    border: none;
+    width: 180px;
+    height: 38px;
+    font-size: 30px;
+}
+
+.tillbaka-knapp button {
+    width: 180px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    background-color: #DFB08E;
+    font-size: 30px;
+    margin-left: 16px;
+    margin-bottom: 24px;
+}
+
+.ruta {
+    background-color: #FFFFFF;
+    padding: 10px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-break: break-all;
+    height: 70vh;
+
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}

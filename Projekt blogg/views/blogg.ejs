@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Blogg</title>
+</head>
+<body id="bloggen">
+    <div class="main-bloggen">
+        <div class="blogg-knapp">
+            <button onclick="location.href = '/bloggar/blogg/<%= blogPost.id %>/redigera'">Redigera</button>
+            <form action="/bloggar/blogg/<%= blogPost.id %>/radera" method="POST">
+                <input type="hidden" name="index" value="<%= blogPost.id %>">
+                <button type="submit">Radera</button>
+            </form>
+        </div>
+        <div class="tillbaka-knapp">
+            <button onclick="location.href = '/bloggar'">Tillbaka</button>
+        </div>
+        <div class="ruta">
+            <h1><%= blogPost.title %></h1>
+            <h2><%= blogPost.category %></h2>
+            <h3><%= blogPost.author %></h3>
+            <p><%= blogPost.text %></p>
+        </div>
+    </div>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

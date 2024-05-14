@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogg</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body> 
+    <%- include('partials/sidebar.ejs') %>
+    <div class="content">
+        <%- include('partials/blogg-title.ejs') %>
+        <div class="main">
+            <form action="/bloggar" method="GET">
+    <div class="search">
+        <div class="search-input">
+            <input type="text" placeholder="Sök" name="searchTerm" value="<%= searchTerm %>"> <!-- Lägg till value-attributet här -->
+        </div>
+        <div class="search-icon">
+            <button class="material-symbols-outlined"> search </button>
+        </div>
+    </div>
+</form>            
+            <div class="blog-sites">
+                <ul>
+                    <% blogPosts.forEach(post => { %>
+                        <li>
+                            <div class="blog-card">
+                                <h1><%= post.title %></h1>
+                                <h2><%= post.category %></h2>
+                                <h3><%= post.author %></h3>
+                                <h4><%= new Date(post.date).toLocaleString() %></h4>
+                                <p><%= post.text.substring(0, 50) %></p>
+                                <a href="/bloggar/blogg/<%= post.id %>">Läs mer</a>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        <%- include('partials/footer.ejs') %>
+    </div>
+</body>
+</html>

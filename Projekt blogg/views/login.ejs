@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Logga in</title>
+</head>
+<body id="login-page">
+    <form id="login-form" action="/bloggar/login" method="POST">
+        <div class="anvandarnamn-losen">
+            <input type="text" name="username" placeholder="Användarnamn" required/>
+            <input type="password" name="password" placeholder="Lösenord" required>
+        </div>
+        <div class="login-button">
+            <input type="submit" value="Logga in">
+        </div>
+    </form>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

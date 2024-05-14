@@ -1,0 +1,54 @@
+</main>
+<div id="side-bar" class="side-bar">
+    <div class="top-bar">
+        <div id="catagories-title">
+            <h1>KATEGORIER</h1>
+        </div>
+        <div id="blog-icon">
+            <a href="/bloggar/skapa-blogg">
+                <button class="material-symbols-outlined">edit_square</button>
+            </a>
+        </div>
+    </div>
+    <div id="side-bar-functions">
+        <a href="/bloggar/login" class="material-symbols-outlined"> person</a>
+        <button class="material-symbols-outlined" onclick="showCategories()"> menu</button>
+    </div>
+</div>
+
+<script>
+// Ladda in kategoridata från servern
+var uniqueCategories = <%- JSON.stringify(uniqueCategories) %>;
+
+function showCategories() {
+    var sideBar = document.getElementById("side-bar"); // Hämtar referensen till sidopanelen
+    var categoriesTitle = document.getElementById("catagories-title"); // Hämtar referensen till kategorirubriken
+    
+    // Kontrollerar om sidopanelens bredd är 350px
+    if (sideBar.style.width === "350px") {
+        categoriesTitle.style.display = "none"; // Gömmer kategorirubriken
+        var divsToRemove = document.getElementsByClassName("category-list"); // Hämtar element med klassen "category-list"
+        if (divsToRemove.length > 0) {
+            var parentDiv = divsToRemove[0].parentNode; // Hämtar referensen till förälderelementet för den första kategorilistan
+            parentDiv.removeChild(divsToRemove[0]); // Tar bort den första kategorilistan
+        }
+        sideBar.style.width = "50px"; // Sätter sidopanelens bredd till 50px
+    } else {
+        sideBar.style.width = "350px"; // Sätter sidopanelens bredd till 350px
+        categoriesTitle.style.display = "flex"; // Visar kategorirubriken
+        var categoryList = document.createElement("div"); // Skapar ett nytt div-element för kategorilistan
+        categoryList.className = "category-list"; // Sätter klassen för div-elementet till "category-list"
+        uniqueCategories.forEach(function(category) {
+            var button = document.createElement("button"); // Skapar ett nytt knapp-element för varje kategori
+            button.textContent = category; // Sätter knappens text till kategorinamnet
+            button.onclick = function() {
+                location.href = '/bloggar?searchTerm=' + encodeURIComponent(category); // När knappen klickas, omdirigeras användaren till en annan sida med söktermen som kategori
+            };
+            categoryList.appendChild(button); // Lägger till knappen i div-elementet som innehåller kategorilistan
+        });
+        document.getElementById("side-bar").appendChild(categoryList); // Lägger till div-elementet med kategorilistan i sidopanelen
+    }
+}
+</script>
+</body>
+</html>
